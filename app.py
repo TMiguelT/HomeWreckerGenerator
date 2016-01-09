@@ -49,5 +49,8 @@ def hello():
 	texts = [text_model.make_sentence() for i in range(5)]
 	texts = [sentence for sentence in texts if sentence is not None and len(sentence) > 0]
 	return " ".join(texts)
-app.run(debug=True)
-print("Listening on port " + str(port))
+
+#Run if debugging
+if __name__ == "__main__":
+	app.run(debug=True)
+	print("Listening on port " + str(port))
