@@ -1,0 +1,5 @@
+markovify
+requests
+nltk
+beautifulsoup4
+flask

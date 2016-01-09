@@ -55,3 +55,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+#Custom
+py3env
+python2env
