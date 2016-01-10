@@ -12,6 +12,11 @@ port = int(os.environ.get('PORT', 5000))
 api = "http://shesahomewrecker.com/api/infinity-scroll/?query=home&page="
 PAGES_TO_TRAIN = 10
 
+#Install Natural Language data
+print("Downloading setup...")
+nltk.download('averaged_perceptron_tagger')
+print("Done.")
+
 class POSifiedText(markovify.Text):
 	def word_split(self, sentence):
 		words = re.split(self.word_split_pattern, sentence)
