@@ -50,7 +50,7 @@ for i in range(0, PAGES_TO_TRAIN):
 pages = [page for page in pages if page is not None and len(page) > 0]
 text = " ".join(pages)
 print("	Training...")
-text_model = POSifiedText(text)
+text_model = markovify.Text(text)
 print("	Done. Starting app.")
 
 # Web stuff
