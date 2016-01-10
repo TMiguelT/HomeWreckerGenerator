@@ -33,14 +33,18 @@ def getPageText(page):
 	tags = soup.find_all(class_='post-text')
 	return [el.text.strip() for el in tags]
 
+print("Starting setup...")
 
 # Setup
 pages = []
 for i in range(0, PAGES_TO_TRAIN):
+	print("	Downloading page " + str(i))
 	pages.extend(getPageText(i))
 pages = [page for page in pages if page is not None and len(page) > 0]
 text = " ".join(pages)
+print("	Training...")
 text_model = POSifiedText(text)
+print("	Done. Starting app.")
 
 # Web stuff
 app = Flask(__name__)
