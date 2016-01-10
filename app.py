@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 #Constants
 port = int(os.environ.get('PORT', 5000))
 api = "http://shesahomewrecker.com/api/infinity-scroll/?query=home&page="
-PAGES_TO_TRAIN = 2
+PAGES_TO_TRAIN = 10
 TOTAL_PAGES = 900
 
 #Install Natural Language data
