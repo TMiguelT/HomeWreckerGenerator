@@ -10,7 +10,8 @@ from bs4 import BeautifulSoup
 #Constants
 port = int(os.environ.get('PORT', 5000))
 api = "http://shesahomewrecker.com/api/infinity-scroll/?query=home&page="
-PAGES_TO_TRAIN = 10
+PAGES_TO_TRAIN = 2
+TOTAL_PAGES = 900
 
 #Install Natural Language data
 print("Downloading setup...")
@@ -43,8 +44,9 @@ print("Starting setup...")
 # Setup
 pages = []
 for i in range(0, PAGES_TO_TRAIN):
-	print("	Downloading page " + str(i))
-	pages.extend(getPageText(i))
+	page_num = random.randrange(0, TOTAL_PAGES)
+	print("	Downloading page " + str(page_num))
+	pages.extend(getPageText(page_num))
 pages = [page for page in pages if page is not None and len(page) > 0]
 text = " ".join(pages)
 print("	Training...")
